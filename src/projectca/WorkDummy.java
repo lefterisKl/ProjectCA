@@ -26,7 +26,7 @@ public class WorkDummy implements Runnable {
              x++;
              x--;
         }
-        System.out.println("Job "+jid+" has been executed.");
+        System.out.println("Job "+jid+" is done.");
     }
     
     

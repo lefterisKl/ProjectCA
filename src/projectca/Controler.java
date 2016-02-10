@@ -20,12 +20,20 @@ public class Controler {
     public static void main(String[] args)
     {
         ArrayList<Integer> phase;
-        dg = new DirectedGraph(args[0]);
+        //dg = new DirectedGraph(args[0]);
+        dg = new DirectedGraph();
+        dg.readGraph("testfile");
         ex = new Executioner();
-        
+        int i=1;
         while((phase=dg.getNextPhase()) != null)
         {
+            System.out.print("phase"+ i+": jobs[");
+            for(Integer job:phase)
+                System.out.print(job+" ");
+            System.out.println("\b] will start concurrent execution..");
             ex.executePhase(phase);
+            i++;
+            System.out.println("");
         }
         
     }
