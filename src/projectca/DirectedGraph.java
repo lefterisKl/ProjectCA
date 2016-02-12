@@ -91,10 +91,7 @@ public class DirectedGraph {
             {
                 phase.add(key);
                 //graph.remove(key);
-                for (Integer k : graph.keySet()) 
-                {
-                    graph.get(k).remove(key);
-                }
+                
             }
             
         }
@@ -102,6 +99,10 @@ public class DirectedGraph {
         for( Integer key : phase)
         {
             graph.remove(key);
+            for (Integer k : graph.keySet()) 
+            {
+                graph.get(k).remove(key);
+            }
         }
         return phase;
     }
